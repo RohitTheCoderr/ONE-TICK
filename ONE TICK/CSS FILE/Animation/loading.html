@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #222;
+}
+
+.ball {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 10px;
+  animation: rotate 2s linear infinite;
+}
+
+.ball-1 {
+  background-color: #f00;
+  animation-delay: 0s;
+}
+
+.ball-2 {
+  background-color: #0f0;
+  animation-delay: 0.5s;
+}
+
+.ball-3 {
+  background-color: #00f;
+  animation-delay: 1s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+     
+    </style>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="ball ball-1"></div>
+    <div class="ball ball-2"></div>
+    <div class="ball ball-3"></div>
+  </div>
+</body>
+</html>

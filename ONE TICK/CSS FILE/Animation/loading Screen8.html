@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading...</title>
+    <style>
+      :root {
+        --border-width: 7px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #eb4a62;
+      }
+
+      .section1 {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .sec-loading {
+        height: 80px;
+        width: 80px;
+        border: var(--border-width) solid white;
+        border-radius: 0 50% 50% 50%;
+        transform: rotate(45deg);
+        /* position: relative; */
+        animation: move 0.5s linear infinite alternate-reverse;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .one{
+        height: 55px;
+        width: 55px;
+        border: var(--border-width) double transparent;
+        border-radius: 50%;
+        border-top-color: rgb(255, 255, 255);
+        border-bottom-color: rgb(255, 255, 255);
+        animation: rotate 1s linear infinite ;
+      }
+
+      @keyframes rotate {
+        to {
+          transform:  rotate(360deg);
+        }
+      }
+      @keyframes move {
+        to {
+          transform: translateY(15px) rotate(45deg);  
+        }
+      }
+
+
+      /* .sec-loading {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      } */
+
+      /* .sec-loading  .one {
+        height: 80px;
+        width: 80px;
+        border: var(--border-width) solid white;
+        transform: rotate(45deg);
+        border-radius: 0 50% 50% 50%;
+        position: relative;
+        animation: move 0.5s linear infinite alternate-reverse;
+      }
+      .sec-loading .one::before {
+        contain: "";
+        position: absolute;
+        height: 55%;
+        width: 55%;
+        border-radius: 50%;
+        border: var(--border-width) solid transparent;
+        border-top-color: white;
+        border-bottom-color: white ;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: rotate 1s linear infinite;
+      }
+      @keyframes rotate {
+        to {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+      @keyframes move {
+        to {
+          transform: translateY(15px) rotate(45deg);
+        }
+      } */
+    </style>
+  </head>
+  <body>
+    <section class="section1">
+      <section class="sec-loading">
+        <div class="one"></div>
+      </section>
+    </section>
+  </body>
+</html>

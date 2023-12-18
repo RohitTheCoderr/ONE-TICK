@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        height: 100px;
+        width: 100px;
+        margin: 400px 800px 400px 800px;
+        display: flex;
+      }
+
+      .Ch1 {
+        height: 10px;
+        width: 10px;
+        margin-right: 5px;
+        border-radius: 50%;
+        background-color: rgb(255, 0, 0);
+        animation: C1 2s 1s linear infinite;
+      }
+      .Ch2 {
+        height: 10px;
+        width: 10px;
+        margin-right: 5px;
+        border-radius: 50%;
+        background-color: rgb(242, 255, 0);
+        animation: C2 2s 1s linear infinite;
+      }
+      .Ch3 {
+        height: 10px;
+        width: 10px;
+        margin-right: 5px;
+        border-radius: 50%;
+        background-color: rgb(9, 255, 0);
+        animation: C3 2s 1s linear infinite;
+      }
+      .Ch4 {
+        height: 10px;
+        width: 10px;
+        margin-right: 5px;
+        border-radius: 50%;
+        background-color: rgb(0, 64, 255);
+        animation: C4 2s 1s linear infinite;
+      }
+
+      @keyframes C1 {
+        0% {
+          margin-top: 0px;
+        }
+        /* 25%{
+            margin-top: px;
+        } */
+        50% {
+          margin-top:10px ;
+        } 
+        /* 75%{
+            margin-top: px;
+        } */
+        100% {
+          margin-top: 20px;
+        }
+      }
+      @keyframes C2 {
+        0% {
+          margin-top: 0px;
+        }
+        25% {
+          margin-top: 3px;
+        }
+        50% {
+          margin-top: 5px;
+        }
+        75% {
+          margin-top: 0;
+        }
+        100% {
+          margin-top: 20px;
+        }
+      }
+      @keyframes C3 {
+        0% {
+          margin-top: 0px;
+        }
+        25%{
+            margin-top: 5px;
+        }
+        50% {
+          margin-top:10px ;
+        } 
+        100% {
+          margin-top: 20px;
+        }
+      }
+      @keyframes C4 {
+        0% {
+          margin-top: 0px;
+        }
+        25% {
+          margin-top: 10px;
+        }
+        50% {
+          margin-top: 10px;
+        }
+        75% {
+          margin-top: 20px;
+        }
+        100% {
+          margin-top: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="Ch1"></div>
+      <div class="Ch2"></div>
+      <div class="Ch3"></div>
+      <div class="Ch4"></div>
+    </div>
+  </body>
+</html>

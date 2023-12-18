@@ -1,0 +1,42 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./BgIMAGE/bg4.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+center{
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: 50px;
+}
+h2{
+    margin: 10px 0 0 0;
+    font-size:25px;
+    font-weight: bold;
+    height: 2rem;
+    width: 19rem; 
+    color: rgb(0, 0, 0);
+    background:rgb(210, 149, 127);
+    border: 2px solid silver;
+    border-radius: 10px;
+}
+.bgimg{ 
+    max-width: 300px;          /* max width ka matlb h ji jitni bhi badi dispaly kyo na ho eski width 1200px hogi*/
+    width: 90%;        
+    height: 500px;
+   border: none;
+   border-radius: 5px;
+   margin: 20px 0 10px 0;
+}
+
+
+
