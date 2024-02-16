@@ -1,0 +1,369 @@
+*{
+    scroll-behavior: smooth;
+}
+
+/*Scrollbar start  */
+/* width */
+::-webkit-scrollbar {
+    width: 0.5rem;
+         display: none; 
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 5rem;
+    height: 2rem;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #7C7777;
+    border-radius: 10px;
+    height: 2rem;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b48787;
+  }
+/* Scrollbar end */
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #212121;
+    /* position: fixed; */
+}
+
+/*================= navbar ================= */
+.navdiv{
+    height: 18vh;
+    width: 100vw;
+}
+nav{
+    margin: 0;
+    display: grid;
+    grid-template-areas: 
+    "navLogo navMid navContact";
+    grid-template-columns: 2fr 5fr 2fr;
+    height: 18vh;
+    align-items: center;
+
+    color: rgb(16, 4, 67);
+    background: rgb(22, 132, 175);
+    /* position: fixed; */
+    position: relative;
+    /* position: block; */
+
+}
+.logodiv{
+    grid-area: navLogo;
+    text-align: center;
+}
+.logo{
+    height: 100px;
+    width: 100px;
+    border-radius: 5% 40% 5% 40%;
+    border: 5px solid rgb(14, 0, 70);
+}
+.navItemdiv{
+    grid-area: navMid;
+}
+.contactdiv{
+    grid-area: navContact;
+}
+.navul{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 0;
+}
+.navli{ 
+    list-style-type: none;
+    font-size: 20px;
+     font-weight:bold ;
+    width:95px;
+    height: 25px;
+    border-radius: 5px; 
+}
+.navli:hover{
+    font-style: italic;
+    color:  #ff7c7c;
+    cursor: pointer;
+}
+.dropdown{
+   position: absolute;
+   width: 90px;
+   height: auto;
+   border-radius: 5px;
+   background-color: rgb(16, 4, 67);
+   display: none;
+   padding: 10px 2px;
+   margin-top: 1.8px;
+}
+nav a{ font-size: 16px;
+    font-weight: normal;
+    border-radius: 5px ;
+    height: 20px;
+    color: white;
+    margin: 5px 0;
+    padding: 3px;
+    display: block;
+    text-decoration: none;
+}
+ nav a:hover{
+    border: 1px solid rgb(0, 0, 0);
+    background-color:transparent;
+    box-shadow: 0 2px 3px rgb(22, 132, 175);
+}
+#about:hover .dropdown{
+    display: block;
+    margin-right: auto;
+}
+#education:hover .dropdown{
+   display: block;
+}
+#profile:hover .dropdown{
+    display: block;
+}
+#contact:hover .dropdown{
+    display: block;
+}
+
+/*================ main div================ */
+.container{
+    width: 100vw;
+    height:82vh;
+    display: grid; 
+    grid-template-areas: 
+    "sidebar maincontent "
+    "footer footer";
+    grid-template-columns: 1.3fr 5fr; 
+    grid-template-rows:  auto 30px ;
+}
+
+/* __________________ sidebar part________________ */
+.sidebar{
+    grid-area: sidebar;
+    background-color: #ff7c7c;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.sidediv{
+    display:inline;
+}
+.sidebar p{
+color: white;
+}
+.imgdiv{
+    margin-top: 2rem;
+    text-align: center;
+}
+.imgdiv .rohit{
+    height: 170px;
+    width: 150px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    transition: all 1.5s linear;
+    cursor: pointer;
+}
+.rohit:hover{
+    transform: scale(1.2);
+    box-shadow: 0 5px 8px rgb(22, 132, 175);
+}
+.linkbutton{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 0.5px;
+    height: 3rem;
+}
+
+.sideimg{
+    height: 2rem;
+    outline: none;
+    border: none;
+}
+#github{
+    border-radius: 50%;
+    background-color: white;
+}
+#linkedin{
+    /* border: 2px solid; */
+background-color: white;
+}
+.sideBtn{
+    position: relative;
+    height: 2rem;
+    width: 80%;
+    /* background-color: #212121; */
+    background-color: green;
+    border-radius: 20px;
+    margin-top: 0.8rem;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    z-index: 1;
+    overflow: hidden;
+    transition:  1s;
+}
+
+#downCV {
+    background-color: rgb(16, 4, 67);
+}
+#downCV a{
+    text-decoration: none;
+color: white;
+}
+#downCV a:hover{
+    text-decoration: underline;
+color: blue;
+}
+#downCV::before{
+    background-color: green;
+}
+
+.sideBtn::before{
+content:"";
+position: absolute;
+top: 0;
+left: 0;
+width: 0%;
+height: 100%;
+background-color: rgb(16, 4, 67);
+/* background-color: #212121; */
+z-index: -1;
+transition: .5s;
+}
+
+.sideBtn:hover::before{
+    width: 100%;
+}
+
+
+/* __________________main contenet part ___________________ */
+.maincontent{
+    grid-area: maincontent;
+    background-color: rgb(23, 27, 27);
+    overflow:scroll;
+    scroll-behavior: smooth;
+    padding: 0rem 3rem;
+    color: white;
+}
+.info, .aboutpage, .resumepage, .servicepage,  .mySkillpage, .contactpage{
+    margin: 3rem 0;
+    width: 90%;
+}
+.heading{
+background-color:rgb(0, 0, 60);
+border: 2px solid green;
+border-radius: 7px;
+padding: 2px 10px;
+}
+.maincontent p{
+    font-size:18px ;
+    color: #c0c0c0;
+}
+.fresherdiv{
+ display: flex;
+ justify-content: space-around;
+}
+.numspan{
+    color: green;
+    font-size: 40px;
+    margin-right: 5px;
+}
+.spanword{
+    color: green;
+}
+.pEducation{
+    font-size: 15px;
+    color: #7f7f7f;
+}
+
+/* ____________services page_____________ */
+.special{
+    /* width: 80%; */
+    height: auto;
+    /* background-color: orange; */
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 1rem 2rem;
+    padding:5px 10px;
+    align-items: center;
+}
+
+/* ____________SKILL PAGE_______________________ */
+.advantagediv{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    text-align: center;
+    padding: 2px 1.5rem;
+}
+.skill{
+    width: 7rem;
+    height: 8.5rem;
+    border: 2px solid white;
+    border-radius: 40px;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 3px 5px;
+}
+.skill img{
+    height: 40px;
+    width: 40px;
+    border: 2px solid blue;
+    border-radius: 20%;
+}
+.skill span{
+    color: green;
+    font-size: 22px;
+}
+
+/* ____________contact page ________________ */
+
+.contacts{
+    display: flex;
+    /* background-color: yellow; */
+    padding: 0 1rem;
+}
+.conitemdiv{
+    width: 100%;
+    height: 5rem;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 8px 10px;
+    margin: 0 0.3rem;
+    display: grid;
+    align-items: center;
+}
+.conitemdiv img{
+    height: 30px ;
+    /* width: 35px; */
+    border-radius: 50%;
+}
+.conitemdiv span{
+    font-size: 18px;
+    color: green;
+}
+
+/* _______________footer part_________________ */
+.footer{
+    grid-area: footer;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footertext{
+    font-size: 14px ;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+

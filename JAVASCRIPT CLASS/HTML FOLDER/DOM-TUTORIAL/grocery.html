@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo list</title>
+    <script  src="grocery.js" defer></script>
+   <style>
+    *{
+    box-sizing: border-box;          /* here why use box-sizing: border-box; because if we want to any element height, width and any things size same no change after padding amd margin  */
+    padding: 0;
+    margin: 0;
+}
+body
+{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.section1{
+     height: 20rem;
+    width:auto;
+    background-image: url(./img/bg4.jpg);
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+color: skyblue;
+}
+#heading{
+    text-align: center;
+    color: black;
+    background-color: #efefef;
+}
+.grocery-items-container{
+   
+    padding: 2rem;
+    display:flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+}
+ol >li{
+    color: white;
+    font-size: 16px;
+    padding: 5px 0px 0px 10px;
+    margin-top: 0.3rem ;
+    cursor: pointer;
+}
+ol >li:hover{
+    color: #001119;
+}
+.section2{
+    width: auto;
+    padding: 2rem;
+    background-image: url(./img/bg2.jpg);
+    background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+display: grid;
+justify-content: center;
+margin-top: 2rem;
+text-align: center;
+}
+
+
+
+
+#bud-div{ 
+    text-align: center;
+    min-height: 40vh;
+    width: 50vw; 
+    height: auto;
+    padding: 10px;
+   background: transparent; 
+   backdrop-filter: blur(5px); 
+     /* box-shadow: 5px 7px 7px rgb(0, 0, 0);     this is use for 2 side top right, bottom-left, etc */
+     box-shadow: 2px 2px 10px 5px rgb(0, 0, 0);   
+
+ } 
+
+
+.enter-box{
+    min-height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.enter-box input{
+    border-radius: 5px;
+    font-size: 18px;
+    /* background-color: aqua; */
+}
+
+.enter-box input[type="text"]{
+    width: 78%;
+    border: none;
+    border: 2px solid #001119;
+    padding-left: 5px;
+}
+.enter-box input[type="text"]:hover{
+    background: #0444;
+    border: 2px solid #001119;
+}
+
+.enter-box input[type="button"]{
+    width: 20%;   
+    font-size: medium;
+    padding: 0.1rem;
+    background-color: #001119;
+    color: white;
+}
+.enter-box input[type="button"]:hover{
+    border: groove 2px rgb(38, 255, 0);
+    color: green;
+    cursor: pointer;
+}
+
+.grocery-list{
+    text-align: right;
+    list-style-type: none;
+    }
+.grocery-list li{
+    padding: 0.3rem 0.7rem;
+    background: #0444;
+    color: rgb(255, 0, 208);
+    margin-top: 0.8rem;
+    text-transform: capitalize;    /* this property is use for trasform text's first leter in capital */
+    border: 2px solid #001119; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.grocery-btn{
+   padding: 0.1rem 0.3rem;
+   font-size: 0.7rem;
+   font-weight: bold;
+   cursor: pointer;
+   border-radius: 5px;
+}
+.done:hover{
+    background-color: green;
+}
+.remove:hover{
+    background-color: rgb(255, 0, 0);
+} 
+   </style>
+</head>
+<body>
+    <section class="section1 ">
+        <h1 id="heading">GROCERY ITEMS LIST BOX</h1> 
+        <h3>You can also select grocery items from list box</h3>
+        <div class="grocery-items-container">
+        <ol>DAIRY
+            <li>Milk</li>
+            <li>Eggs</li>
+            <li>Butter</li>
+            <li>Cheese</li>
+            <li>Yogurt</li>
+        </ol>
+        <ol>DRINKS
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Juice</li>
+            <li>Soda</li>
+            <li>Water</li>
+        </ol>
+        <ol>FRUITS
+            <li>Apple</li>
+            <li>Bananas</li>
+            <li>Pears</li>
+            <li>Oranges</li>
+            <li>Blueberries</li>
+        </ol>
+        <ol>GRAINS
+            <li>Breadcrumbs</li>
+            <li>Pasta</li>
+            <li>Quinoa</li>
+            <li>Wheat bread</li>
+            <li>Rice</li>
+        </ol>
+        <ol> BAKING GOODS
+            <li>Honey</li>
+            <li>Chocolate Chips</li>
+            <li>Baking Soda</li>
+            <li>Sugar</li>
+            <li>Dry Yeast</li>
+        </ol>
+    </div>
+    </section>
+    <section class="section2 grocery-container">
+        <div id="bud-div">
+    <h2 id="Bud">GROCERY ITEMS</h2>
+    <form class="enter-box">
+        <input class="inputText" type="text" placeholder="Enter items" >
+        <input calss="inputButton" type="button" value="Add"  onclick="sub()">
+    </form>
+    
+    <ul class="grocery-list">
+        <li>
+            <span class="item"> Milk</span>
+            <div class="item-button">
+                <button class="grocery-btn done">Done</button>
+                <button class="grocery-btn remove" >Remove</button>
+            </div>
+        </li>
+    </ul> 
+        
+</div>
+    </section>
+</body>
+</html>

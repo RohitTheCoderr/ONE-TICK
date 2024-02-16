@@ -1,0 +1,984 @@
+
+*{
+    /* box-sizing: border-box; */
+    scroll-behavior: smooth;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+    position:fixed;
+}
+/*Scrollbar start  */
+/* width */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 5rem;
+  height: 2rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #7C7777;
+  border-radius: 10px;
+  height: 2rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b48787;
+}
+
+/* Scrollbar end */
+.main-contaier{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-areas:
+    'header header header header header'
+    'side navbar navbar navbar navbar'
+    'side content content content content'
+    'side  content content content content';
+    grid-template-columns: 0.9fr 5fr ;
+    grid-template-rows: 10vh 8vh auto;
+}
+
+
+/* ======================header===================================== */
+
+.header-box{
+  grid-area: header;
+  /* display: block; */
+}
+
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: 60%;
+    margin-top: 1rem;
+    
+}
+
+.start-head{
+    width: 30%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.three-line{
+    height: 1.2rem; 
+    cursor: pointer;
+}
+.three-line:hover{
+    background-color: #8c8c8c;
+    
+}
+.Youtube-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.youtube-logo{
+    height: 2rem;
+    cursor: pointer;
+}
+.youtube-text{
+  font-size: 2.7rem;
+  font-weight: bold;
+}
+sup{
+  font-size: small;
+}
+.mid-head{
+  height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-box{
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  width: 28rem;
+  border: 2px solid black;
+  border-radius: 30px;
+  background-color: #c2c2c2;
+}
+.search-bar{ 
+    height: 2.5rem;
+    width: 25rem;
+    outline: none;
+    border-radius: 3rem 0 0 3rem;
+    padding: 0 10px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    margin-right: 0.5rem; ;
+}
+.search-icon{
+    height: 1.8rem;
+    cursor: pointer;
+}
+.voice-search {
+    height: 2rem;
+    padding: 3px;
+    margin-left: 0.8rem;
+    background-color: #c2c2c2;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+.last-head{
+    width: 20%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-icon, .bell-icon{
+    height: 2rem;
+    padding: 3px;
+    margin-right: 1rem;
+    background-color: #c2c2c2;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.profile-pic{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.bell-icon:hover,.upload-icon:hover, .voice-search:hover , .search-box:hover{
+     background-color: #8c8c8c;
+    }
+
+/* ====================================== navbar====================================== */
+
+.navbar-box{
+    grid-area: navbar;
+    /* background-color: #c2c2c2; */
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.navbar-content{
+    margin:0 1rem;
+    width:100%;
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+  
+    }
+
+    .nav-item{
+      background-color: #c2c2c2;
+    white-space: nowrap;       
+    padding: 3px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0.5rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.nav-item:hover{ background-color: #8c8c8c;}
+
+.navbar-content>div:first-child {
+  background-color: #8c8c8c;
+    /* Styles only the first navbar */
+  }
+
+/* ==========================================side ================================= */
+.side-box{
+  grid-area: side;
+  margin: 0;
+  padding: 0;
+  padding-left: 1rem;
+  overflow-y: scroll;
+}
+.sitem{
+    display: flex;
+    gap: 1rem;
+    padding-left: 1rem;
+    background-color: #c2c2c2;
+    cursor: pointer;
+}
+.sitem:hover{
+    background-color: #8c8c8c;
+}
+
+.side-item1, .side-item2{
+    padding: 0.3rem 0;
+  margin: 0;
+}
+.side-logo{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+ 
+}
+
+.side-box>div:first-child{
+    background-color: #8c8c8c;
+}
+/* ====================================== content =================================== */
+
+.content-box{
+    grid-area: content;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    overflow: scroll;
+    overflow-x: hidden;
+    /* margin: 0 1rem; */
+    /* padding: 0 1rem ; */
+}
+/* =============short-text================= */
+.short-text{
+  display: flex;
+  align-items: center;
+  border-radius: 0.7rem;
+  padding: 0 5rem;
+  margin: 0.5rem 1rem 0;
+  background-color: #F2F2F2;
+  height: 3.5rem;
+}
+.short-text img{
+  height: 2rem;
+  cursor: pointer;
+}
+
+#S-text{
+  margin-left: 1rem;
+  color: red;
+}
+
+.short-container{
+  display: grid;
+  grid-template-columns: repeat(5, 25.5rem);
+  row-gap: 2rem;
+  align-content: space-evenly;
+  padding: 1rem 0;
+cursor: pointer;
+display: flex;
+overflow-x: scroll;
+}
+
+.video-box{
+  width: 15rem;
+  height:25rem ;
+  background-color: #c2c2c2;
+  border-radius: 0.5rem;
+margin:0 1rem ;
+
+}
+
+.S-video{
+  width: 15rem;
+  height: 25rem;
+  border-radius: 0.5rem;
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) 0.2s;
+}
+.S-video:hover{
+  transform: scale(1.01);
+  box-shadow: 2px 2px 3px black;
+}
+
+.video-container1, .video-container2{
+    display: grid;
+    grid-template-columns: repeat(4, 18.3rem);
+    row-gap: 1.8rem;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    padding: 1rem;
+}
+
+.video-card {
+    width: 18rem;
+    background-color: #9bcdd0;
+    border-radius: 0.5rem;
+  }
+  .video-container2 .video-card {
+    width: 18rem;
+    background-color: #ffc7c7;
+    border-radius: 0.5rem;
+    color: white;
+  }
+.video {
+    border-radius: 0.5rem;
+    width: 18rem;
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) 0.2s;
+  }
+
+  .person-logo {
+    border-radius: 100%;
+    height: 2rem;
+    width: auto;
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) 0.2s;
+    cursor: pointer;
+  }
+  .video-details {
+    padding: 0.01rem 0.4rem 0.3rem;
+    display: flex;
+    gap: 0.7rem;
+  
+  }
+
+  .three-dot {
+    margin: 0.3rem 0.1rem auto 0.11rem;
+    height: 15px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.01s;
+  }
+  
+.video:hover,
+.three-dot:hover {
+  transform: scale(1.01);
+  box-shadow: 2px 2px 3px black;
+}
+.person-logo:hover{
+    transform: scale(1.1);
+  box-shadow: 1px 1px 2px black;
+}
+
+.title {
+  font-size: 1rem;
+  margin: 0;
+  padding-bottom: 0.2rem;
+  width: 100%;
+  line-height: 1.4rem;
+}
+
+
+  .description {
+    font-size: 0.8rem;
+    margin: 0;
+    line-height: 1.2rem;
+  }
+  
+
+  .related-text{
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.7rem;
+    padding: 0 0.5rem;
+    margin: 1rem 1rem 0;
+    background-color: #F2F2F2;
+    height: 3.5rem;
+  
+  }
+
+  
+  /* ---------------------------------Media-Queary-------------------------------------- */
+
+  /* For Small phone size max-width 320px */
+  @media (max-width: 376px) {
+    body{
+      background-color: rgb(255, 255, 255);
+      }
+      .main-contaier{
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-areas:
+        'header header header header header'
+        'navbar navbar navbar navbar navbar'
+        'content content content content content'
+        'side side side side side';
+        /* grid-template-columns:5fr ; */
+        grid-template-rows: 8vh 5.5vh auto 8vh;
+    }
+    .header-box{
+      width: auto;
+      width: 100%;
+    }
+    .header-content{
+      justify-content: space-around;
+      width: auto;
+      height: 60%;
+  }
+  .start-head{
+    width: 50%;
+    height: 3.5rem;
+}
+    .three-line{
+      height: 0.8rem; 
+      cursor: pointer;
+  }
+  .youtube-logo{
+    height: 1rem;
+  }
+  .youtube-text{
+    font-size: 1.2rem;
+  }
+  
+sup{
+  font-size: 8px;
+}
+.mid-head{
+    display: flex;
+    height: 3.5rem;
+}
+.search-box{
+  height: 2rem;
+  width: 1rem;
+  border: none;
+  background-color:transparent;
+}
+/* .search-box:hover{
+  background-color: transparent;
+ } */
+.search-bar{ 
+  display: none;
+}
+.search-icon{
+    height: 1.2rem;
+    cursor: pointer;
+}
+.voice-search {
+    height: 1.26rem;
+    margin-top: 0.3rem;
+  }
+
+  .last-head{
+    width: 20%;
+    height: 3.5rem;
+    margin-right: 0.2rem;
+}
+ .bell-icon{
+    height: 1.2rem;
+    padding: 3px;
+}
+.upload-icon{
+display: none;
+}
+
+.profile-pic{
+    height: 1.7rem;
+    width: 1.7rem;
+}
+.bell-icon:hover,.upload-icon:hover, .voice-search:hover , .search-box:hover{
+     background-color: #8c8c8c;
+    }
+
+    .navbar-box{
+      height: 2rem;
+  }
+  .navbar-content{
+      margin:0 0.3rem;
+      }
+  
+      .nav-item{
+      margin: 0.3rem;
+      font-size: 0.8rem;
+  }
+
+
+  /*========================= side navbar box =============================== */
+
+.side-box{
+  padding-left: 0;
+  overflow-x: scroll;
+  width: auto;
+  height: 4rem;
+  display: flex;
+}
+.sitem{
+    display: inline;
+    /* flex-wrap: nowrap; */
+   width: 4.5rem;
+  padding: 0.3rem 0.5rem 0 0.5rem;
+}
+.side-logo{
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-bottom: 0rem;
+  /* margin: 0.2rem; */
+}
+.side-item1, .side-item2{
+  padding:0;
+}
+ .side-item2{
+font-size: 12px;
+white-space: nowrap;  
+padding-right: 2rem;
+}
+ h3, hr{
+  display: none;
+ }
+ .side-box>div:first-child{
+  background-color: #c2c2c2;
+  /* display: none; */
+}
+
+/*============================ short video container ======================= */
+
+.short-text{
+  justify-content: center;
+  border-radius: 0.4rem;
+  margin: 0.1rem 0.2rem 0;
+  height: 1.5rem; 
+}
+.short-text img{
+  height: 1rem;
+}
+
+#S-text{
+  margin-left: 0.5rem;
+}
+
+.short-container{
+  padding: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.video-box{
+  width: 8rem;
+  height:12rem;
+ margin: 0.2rem;
+}
+
+.S-video{
+  width: 8rem;
+  height: 12rem;
+}
+.S-video:hover{
+  transform: scale(1.01);
+  box-shadow: 2px 2px 3px black;
+}
+
+/* ===================  main conntainer video================ */
+
+.video-container1, .video-container2{
+  display:inline;
+  grid-template-columns: repeat(1, 18.4rem);
+  row-gap: 0.8rem;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  padding: 0rem;
+}
+
+.video-card {
+  width: 100vw;
+  height: 47vh;
+  background-color: #fff2f2;
+  border-radius: 0;
+  margin: 0.5rem 0;
+}
+.video-container2 .video-card {
+  width: 100vw;
+  border-radius:0;
+  background-color: #ffffff;
+  color: black;
+}
+.video {
+  border-radius: 0;
+  width: 100vw;
+}
+.related-text{
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  margin: 0 0.2rem ;
+  height: 1.5rem;
+}
+
+.related-text img{
+  height: 0.8rem;
+}
+
+  }
+
+
+  @media (min-width: 376px) and (max-width: 499px) {
+    body{
+      background-color: rgb(255, 255, 255);
+      }
+      .main-contaier{
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-areas:
+        'header header header header header'
+        'navbar navbar navbar navbar navbar'
+        'content content content content content'
+        'side side side side side';
+        grid-template-rows: 8vh 5.5vh auto 8vh;
+    }
+    .header-box{
+      width: 100%;
+    }
+    .header-content{
+      justify-content: space-around;
+      width: auto;
+      height: 60%;
+  }
+  .start-head{
+    width: 50%;
+    height: 3.5rem;
+}
+    .three-line{
+      height: 1rem; 
+      cursor: pointer;
+  }
+  .youtube-logo{
+    height: 1.5rem;
+  }
+  .youtube-text{
+    font-size: 1.8rem;
+  }
+  
+sup{
+  font-size: 8px;
+}
+.mid-head{
+    display: flex;
+    height: 3.5rem;
+}
+.search-box{
+  height: 0rem;
+  width: 1.5rem;
+  border: none;
+  background-color:transparent;
+}
+
+.search-bar{ 
+  display: none;
+}
+.search-icon{
+    height: 1.2rem;
+    cursor: pointer;
+}
+.voice-search {
+    height: 1.26rem;
+    margin-top: 0.3rem;
+  }
+
+  .last-head{
+    width: 20%;
+    height: 3.5rem;
+    margin-right: 0.2rem;
+}
+ .bell-icon{
+    height: 1.2rem;
+    padding: 3px;
+}
+.upload-icon{
+display: none;
+}
+
+.profile-pic{
+    height: 1.7rem;
+    width: 1.7rem;
+}
+.bell-icon:hover,.upload-icon:hover, .voice-search:hover , .search-box:hover{
+     background-color: #8c8c8c;
+    }
+
+    .navbar-box{
+      height: 2.5rem;
+  }
+  .navbar-content{
+      margin:0 0.3rem;
+
+      }
+  
+      .nav-item{
+      margin: 0.3rem;
+      font-size: 1rem;
+  }
+
+
+  /*========================= side navbar box =============================== */
+
+.side-box{
+  padding-left: 0;
+  overflow-x: scroll;
+  width: auto;
+  height: 4rem;
+  display: flex;
+}
+.sitem{
+    display: inline;
+    /* flex-wrap: nowrap; */
+   width: 4.5rem;
+  padding: 0.3rem 0.5rem 0 0.5rem;
+}
+.side-logo{
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-bottom: 0rem;
+  /* margin: 0.2rem; */
+}
+.side-item1, .side-item2{
+  padding:0;
+}
+ .side-item2{
+font-size: 12px;
+white-space: nowrap;  
+padding-right: 2rem;
+}
+ h3, hr{
+  display: none;
+ }
+ .side-box>div:first-child{
+  background-color: #c2c2c2;
+  /* display: none; */
+}
+
+/*============================ short video container ======================= */
+
+.short-text{
+  /* justify-content: center; */
+  border-radius: 0.4rem;
+  margin: 0.3rem 0;
+  height: 1.5rem; 
+}
+.short-text img{
+  height: 1rem;
+}
+
+#S-text{
+  margin-left: 0.5rem;
+}
+
+.short-container{
+  padding: 0.4rem;
+  /* margin-bottom: 1rem; */
+}
+
+.video-box{
+  width: 10rem;
+  height:17rem;
+ margin:0.2rem;
+}
+
+.S-video{
+  width: 10rem;
+  height: 17rem;
+}
+.S-video:hover{
+  transform: scale(1.01);
+  box-shadow: 2px 2px 3px black;
+}
+
+/* ===================  main conntainer video================ */
+
+.video-container1, .video-container2{
+  display:inline;
+  grid-template-columns: repeat(1, 18.4rem);
+  row-gap: 0.8rem;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  padding: 0rem;
+ 
+}
+
+.video-card {
+  width: 100vw;
+  height: 55vh;
+  background-color: #ffffff;
+  border-radius: 0;
+  margin: 1rem 0;
+}
+.video-container2 .video-card {
+  width: 100vw;
+  border-radius:0;
+  background-color: #ffffff;
+  color: black;
+}
+.video {
+  border-radius: 0;
+  width: 100vw;
+}
+.related-text{
+  font-size: 1.2rem;
+  border-radius: 0.4rem;
+  margin: 0 0.2rem ;
+  height: 1.9rem;
+}
+
+.related-text img{
+  height: 1rem;
+}
+  }
+
+
+@media (min-width: 500px) and (max-width: 768px) {
+    body{
+      background-color: rgb(34, 255, 0);
+      }
+      .three-line{
+        height: 1rem;  
+    }
+    
+    .youtube-logo{
+        height: 1.7rem;
+    }
+    .youtube-text{
+      font-size: 2rem;
+    }
+    sup{
+      font-size: 12px;
+    }
+      
+    .mid-head{
+      height: 4rem;
+    }
+    .search-box{
+      height: 2rem;
+      width: 15rem;
+    }
+    .search-bar{ 
+        height: 2rem;
+        width: 13rem;
+    }
+    .search-icon{
+        height: 1.1rem;
+    }
+    .voice-search {
+        height: 1.8rem;
+      }
+    
+    
+    .upload-icon, .bell-icon{
+        height: 1.8rem;
+    }
+    
+    .profile-pic{
+        height: 2.1rem;
+        width: 2.1rem;
+    }
+
+    .nav-item{  
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+}
+.side-box{
+  padding: 0;
+  background-color: #c2c2c2;
+}
+.sitem{
+    display:block;
+    padding: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.side-item1, .side-item2{
+    padding: 0;
+  margin: 0;
+}
+
+/* =============short-text================= */
+.short-text{
+padding: 0 1rem;
+height: 3rem;
+}
+.short-text img{
+height: 2rem;
+}
+
+#S-text{
+margin-left: 0.8rem;
+}
+
+.short-container{
+grid-template-columns: repeat(5, 20.5rem);
+
+}
+
+.video-box{
+width: 13rem;
+height:20rem ;
+margin:0 0.5rem ;
+}
+
+.S-video{
+width: 13rem;
+height: 20rem;
+}
+
+.video-container1, .video-container2{
+  /* display: grid; */
+  grid-template-columns: repeat(1, 100%);
+  row-gap: 1.8rem;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  padding: 1rem;
+}
+
+.video-card {
+  width: 100%;
+  background-color: #9bcdd0;
+  border-radius: 0.5rem;
+}
+.video-container2 .video-card {
+  width: 100%;
+  background-color: #ffc7c7;
+  border-radius: 0.5rem;
+  color: white;
+}
+.video {
+  border-radius: 0.5rem;
+  width: 100%;
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) 0.2s;
+}
+
+.person-logo {
+  border-radius: 100%;
+  height: 2rem;
+  width: auto;
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) 0.2s;
+  cursor: pointer;
+}
+.video-details {
+  padding: 0.01rem 0.4rem 0.3rem;
+  display: flex;
+  gap: 0.7rem;
+
+}
+
+.three-dot {
+  margin: 0.3rem 2rem auto 0.11rem;
+  height: 1.5rem;
+}
+
+.title {
+font-size: 1.5rem;
+padding-bottom: 0.5rem;
+line-height: 1.4rem;
+}
+
+
+.description {
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+}
+
+
+.related-text{
+  font-size: 22px;
+  height: 3rem;
+}
+
+
+  }
+ 

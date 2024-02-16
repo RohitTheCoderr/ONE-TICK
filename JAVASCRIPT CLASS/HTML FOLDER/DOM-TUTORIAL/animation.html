@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        height: 100vh;
+        width: 100vw;
+        background-color: #212121;
+        color: #ffff;
+        display: grid;
+        justify-content: center;
+      }
+      h3 {
+        color: green;
+        cursor: pointer;
+        background-color: tomato;
+        height: 2rem;
+        width: auto;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 0px;
+      }
+      h3:hover{
+        color: blueviolet;
+      }
+
+      .item-box {
+        height: 500px;
+        width: 500px;
+        background-color: rgb(3, 3, 52);
+        position: relative;
+      }
+      .child {
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        /* padding: 2px; */
+      }
+      .box1 {
+        background-color: rgb(255, 81, 0);
+        border-radius: 50% 50% 0% 50%;
+      }
+      .box2 {
+        /* left: 450px; */
+        top: 0;
+        right: 0;
+        background-color: rgb(255, 255, 255);
+        border-radius: 50% 50% 50% 0%;
+      }
+      .box3 {
+        bottom: 0;
+        right: 0;
+        background-color: rgb(13, 255, 0);
+        border-radius: 0% 50% 50% 50%;
+      }
+      .box4 {
+        left: 0;
+        bottom: 0;
+        background-color: rgb(0, 30, 255);
+        border-radius: 50% 0% 50% 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3 onclick="start()">click here for Run Animation</h3>
+      <!-- <button  id="click">click</button> -->
+      <div class="item-box">
+        <div class="box1 child"></div>
+        <div class="box2 child"></div>
+        <div class="box3 child"></div>
+        <div class="box4 child"></div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    let box = document.querySelector(".box1");
+    let box2 = document.querySelector(".box2");
+    let box3 = document.querySelector(".box3");
+    let box4 = document.querySelector(".box4");
+    let enima ; 
+    let position = 0;
+
+    let boolen = true;
+    function start() {
+      if ((boolen ==true)) {
+        clearInterval(enima);
+        enima = setInterval(move, 5);
+      }
+
+      if (boolen==false) {
+        clearInterval(enima);
+        enima = setInterval(moving, 5);
+      }
+    }
+
+      function move() {
+        if (position === 198) {
+          clearInterval(enima);
+          boolen=false;
+        } 
+          position++;
+
+          box.style.top = position + "px";
+          box.style.left = position + "px";
+
+          box2.style.top = position + "px";
+          box2.style.right = position + "px";
+
+          box3.style.bottom = position + "px";
+          box3.style.right = position + "px";
+
+          box4.style.bottom = position + "px";
+          box4.style.left = position + "px";
+        }
+      
+
+
+    function moving() {
+      if (position == 0) {
+        clearInterval(enima);
+        boolen=true;
+      } 
+        position--;
+
+        box.style.top = position + "px";
+        box.style.left = position + "px";
+
+        box2.style.top = position + "px";
+        box2.style.right = position + "px";
+
+        box3.style.bottom = position + "px";
+        box3.style.right = position + "px";
+
+        box4.style.bottom = position + "px";
+        box4.style.left = position + "px";
+
+      }
+    
+  </script>
+</html>

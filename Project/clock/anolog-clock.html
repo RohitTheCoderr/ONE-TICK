@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+  /* background: #282828; */
+  text-align: center;
+  font-size: 10px;
+}
+body {
+  margin: 0;
+  font-size: 2rem;
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+  background-color: gray;
+}
+        .clock{
+            position: relative;
+            height: 20rem;
+            width: 20rem;
+            border: 10px solid #282828;
+            box-shadow: -4px -4px 10px rgba(67,67,67,0.5),
+            inset 4px 4px 10px rgba(0,0,0,0.5),
+            inset -4px -4px 10px rgba(67,67,67,0.5),
+            4px 4px 10px rgba(0,0,0,0.3);
+            border-radius: 50%;
+            background-color: red;
+            margin: 50px auto;
+        }
+       
+        
+        .hour{
+            top: 10%;
+            left: 49%;
+            position: absolute;
+            z-index: 1;
+            height: 80%;
+            width: 7px;
+            background-color: black;
+            border-radius: 50% 50% 0% 0%;
+        }
+        .minute{
+            top: 10%;
+            left: 49.40%;
+            position: absolute;
+            z-index: 3;
+            height: 80%;
+            width: 4px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50% 50% 0% 0%;
+        }
+        .second{
+            top: 10%;
+            left: 49.99%;
+            position: absolute;
+            z-index: 10;
+            height: 80%;
+            width: 3px;
+            background-color: green;
+            border-radius: 50% 50% 0% 0%;
+        
+        }        
+    </style>
+</head>
+<body>
+  
+    <div class="clock">
+        <div class="hour line "></div>
+        <div class="minute  line"></div>
+        <div class="second  line"></div>
+    </div>
+
+
+
+
+    <script> 
+        // Get the clock hands elements
+let hourHand = document.querySelector(".hour");
+let minuteHand = document.querySelector(".minute");
+let secondHand = document.querySelector(".second");
+
+// Define a function to update the clock
+function updateClock() {
+  // Get the current time
+  let date = new Date();
+  let hour = date.getHours();
+  let minute = date.getMinutes();
+  let second = date.getSeconds();
+
+  // Calculate the rotation degree for each hand
+  let hourDegree = (hour % 12) * 30 + minute * 0.5; // 30 degrees per hour, 0.5 degrees per minute
+  let minuteDegree = minute * 6 + second * 0.1; // 6 degrees per minute, 0.1 degrees per second
+  let secondDegree = second * 6; // 6 degrees per second
+
+  // Apply the rotation to the clock hands
+  hourHand.style.transform = `rotate(${hourDegree}deg)`;
+  minuteHand.style.transform = `rotate(${minuteDegree}deg)`;
+  secondHand.style.transform = `rotate(${secondDegree}deg)`;
+}
+
+// Call the updateClock function every second
+setInterval(updateClock, 1000);
+
+// Call the updateClock function once to initialize the clock
+updateClock();
+
+     </script> 
+</body>
+</html>

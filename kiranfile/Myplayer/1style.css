@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  background-image: url(../../0assets/yujiitadori.jpg);
+  /* background-size:cover;
+  background-repeat: no-repeat; */
+}
+
+ul {
+  list-style-type: none;
+}
+ul > li > a {
+  color: wheat;
+  font-size: 1.5rem;
+}
+h2 {
+  margin: 0;
+  padding: 0;
+  color: white;
+  margin-bottom: 2rem;
+}
+.player1 {
+  background-image: url(../../0assets/space2.jpg);
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

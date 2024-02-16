@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    div
+    {
+height: 200px;
+width: 200px;
+background-color: rgb(128, 255, 0);
+
+/* transform ka sirf ek property and baki ke sabhi property ko ek sath lahane ke liye (like=-> bg-color, height, width, color, font, border ect) ham transition me all use karte h  */
+transition: all  2s ;        
+    }
+    div:hover
+    {
+        background-color: black;
+       border: 1rem solid red;
+        /* transform: rotate(90deg); */
+        /* transform: scale(3); */
+        /* transform: translateY(100px); */   
+        transform: skew(-60deg);
+    }
+</style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

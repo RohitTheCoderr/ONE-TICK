@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>discount</title>
+    <style>
+      body {
+        background-color: #212121;
+        color: #efff;
+        display: grid;
+        justify-content: center;
+        text-align: center;
+        background-color: chocolate;
+      }
+      h2 {
+        background-color: green;
+      }
+      form {
+        width: 30rem;
+        height: 30vh;
+        padding: 5px;
+      }
+      button {
+        height: 2rem;
+        width: 5rem;
+        background-color: blue;
+        color: white;
+        border-radius: 5px;
+        margin-top: 0.5rem;
+        border: 2px solid white;
+      }
+      input {
+        text-align: start;
+        margin: 5px;
+        padding: 5px;
+        outline: none;
+        border: 2px solid black;
+        color: white;
+        height: 1.5rem;
+        width: 10rem;
+        font-size: medium;
+        background-color: #b57b7b;
+      }
+      p {
+        /* margin:auto 2px; */
+        padding: 10px;
+        font-size: 20px;
+        font-style: italic;
+        background-color: #e07070;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>TOTAL AMOUNT OF PRODUCT WITH DISCOUNT</h2>
+    <div class="formdiv">
+      <form id="form">
+        Product Name: <input type="text" class="product" />
+        <br />
+        Rate of per PC: <input type="number" class="rate" />
+        <br />
+        Quantity: <input type="number" class="quantity" />
+        <br />
+        <button type="submit">SAVE</button>
+        <br />
+        <br />
+      </form>
+    </div>
+
+    <div class="resultDiv">
+      <p>Total amount:</p>
+      <br />
+      Discount:
+      <input type="text" class="discount" placeholder="enter dis in number" />
+      <br />
+
+      <button onclick="payableAmount()">Total Amount</button>
+
+      <p>payable Amount:</p>
+      <br />
+
+      Payment : <input type="text" class="payment" />
+      <br />
+
+      <button onclick="payNow()">Pay Now</button>
+      <p>message</p>
+    </div>
+
+
+    <script>
+      const form = document.querySelector("#form");
+      const allInput = document.querySelectorAll("input");
+      const allP = document.querySelectorAll(".resultDiv > p");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        allP[0].textContent = 
+          parseInt(allInput[1].value) * parseInt(allInput[2].value);
+      });
+
+      function payableAmount() {
+        allP[1].textContent =
+          "payable Amount:" +
+          (parseInt(allP[0].textContent) -
+            (parseInt(allP[0].textContent) / 100) *
+              parseInt(allInput[3].value));
+      }
+
+      function payNow() {
+        let paymentEntered = parseInt(allInput[4].value);
+
+       let totalPayableBal =  (parseInt(allP[0].textContent) -
+            (parseInt(allP[0].textContent) / 100) *
+              parseInt(allInput[3].value))
+
+        if(paymentEntered>=totalPayableBal)
+        {
+            allP[2].textContent = "Message : bill Paid!  Returnable balance " + parseFloat(paymentEntered-totalPayableBal).toFixed(2)
+
+        }
+        else
+        {
+            allP[2].textContent = "Message : bill Paid Remaining balance " + Math.abs(parseFloat(paymentEntered-totalPayableBal).toFixed(2))
+
+        }
+
+
+        // allP[2].textContent =
+
+      }
+    </script>
+  </body>
+</html>

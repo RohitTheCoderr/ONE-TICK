@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #212121;
+            color: #ffff;
+        }
+.parent{
+
+    justify-content: center;
+   align-items: center;
+   text-align: center;
+   
+}
+
+.head{
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       height: 10rem;
+       /* border: 2px solid black; */
+       border-radius: 8px; 
+       background: rgb(0, 0, 0);
+       transition: all 2s;
+}
+    .paragraph{
+     font-style: italic;
+     transition: all 2s;
+    }
+
+    .showBtn, .fontBtn, .colorBtn{
+  display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+    }
+   
+    .btn{
+        height: 2rem;
+        width: 8rem;
+        border: 2px solid black;
+        border-radius: 5px;
+        background-color: white;
+        color: black;
+    }
+
+    .colorBtn :nth-child(1){
+        background: red;
+        color: white;
+    }
+    .colorBtn :nth-child(1):hover{
+        background: white;
+        color: red;
+        /* transition: all 2s; */
+        font-size: 20px;
+    }
+    .colorBtn :nth-child(2){
+        background: green;
+        color: white;
+    }
+    .colorBtn :nth-child(2):hover{
+        background: white;
+        color: green;
+        /* transition: all 2s; */
+        font-size: 20px;
+    }
+    .colorBtn :nth-child(3){
+        background: blue;
+        color: white;
+    }
+    .colorBtn :nth-child(3):hover{
+        background: white;
+        color: rgb(255, 0, 251);
+        /* transition: all 2s; */
+        font-size: 20px;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+        <div class="head">
+      <p class="paragraph p1" id="para">Conversation with Rohit</p>
+    <span id="ran-color"></span>
+      
+    </div>
+    For changing paragraph
+    <div class="showBtn">
+        <buttton class="sBtn btn" onclick="para1()">paragraph 1</buttton>
+        <buttton class="sBtn btn" onclick="para2()">paragraph 2</buttton>
+        <buttton class="sBtn btn" onclick="para3()">paragraph 3</buttton>
+    </div> <br>
+    For changing Font Size of paragraph text
+    <div class="fontBtn">
+        <buttton class="fBtn btn" onclick="font1()">Font-size 25px</buttton>
+        <buttton class="fBtn btn" onclick="font2()">Font-size 30px</buttton>
+        <buttton class="fBtn btn" onclick="font3()">Font-size 35px</buttton>
+    </div> <br>
+    For changing Paragraph background color
+    <div class="colorBtn">
+        <buttton class="cBtn btn" onclick="color1()">Red</buttton>
+        <buttton class="cBtn btn" onclick="color2()">Green</buttton>
+        <buttton class="cBtn btn" onclick="color3()">Blue</buttton>
+    </div>
+    <br>
+    <button id="random-btn" class="btn" onclick="random()">Random-Color</button>
+</div>
+  </body>
+  <script>
+      
+      const parent = document.querySelector(".parent")
+      const paragraph =document.getElementById("para")
+      const randomBtn =document.getElementById('random-btn')
+      const Head =document.getElementsByClassName('head')[0]
+      const ranColor =document.getElementById('ran-color')
+      
+    function para1() {
+        paragraph.textContent="Hello Rohit 🤝";  
+    }
+
+    function para2() {
+        paragraph.textContent="How Are You 😊?"   
+    }
+    function para3() {
+        paragraph.textContent="Bye!  Nice To Meet You 👋🏻"   
+    }
+
+//  for change font size
+    function font1() {
+        paragraph.style.fontSize="25px"  
+    }
+    function font2() {
+        paragraph.style.fontSize="30px"  
+    }
+    function font3() {
+        paragraph.style.fontSize="35px"  
+    }
+
+//  for change color and backgroundColor
+function color1() {
+        Head.style.backgroundColor="red"  
+        ranColor.textContent=`Current Color is => red`;
+    }
+    function color2() {
+                Head.style.backgroundColor="green";
+                ranColor.textContent=`Current Color is => green`;
+    }
+    function color3() {
+        Head.style.backgroundColor="blue" ;
+        ranColor.textContent=`Current Color is => blue` 
+    }
+
+    function random() {
+
+        const red = Math.floor(Math.random() * 126);
+        const green = Math.floor(Math.random() * 126);
+        const blue = Math.floor(Math.random() * 126);
+        const rgb = `rgb(${red}, ${green}, ${blue})`;
+        Head.style.background = rgb;
+        ranColor.textContent=`Current Random Color is => ${rgb}`
+    }
+    randomBtn.style.background=` linear-gradient(to left, red, blue, green, yellow, red)`
+
+  </script
+</html>

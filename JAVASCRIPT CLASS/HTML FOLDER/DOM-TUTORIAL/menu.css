@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+   
+  }
+
+  .container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-areas:
+      "listItem item "
+      "listItem infoItem";
+    grid-template-columns:  2fr 2.5fr;
+    grid-template-rows: 2.9fr 2fr;
+    grid-column-gap: 5px;
+    
+  }
+
+  .list-item {
+    grid-area: listItem;
+    background-color: aquamarine;
+    display: grid;
+    grid-template-areas:
+      "heading heading"
+      "box1 box2";
+    grid-template-columns: 1fr 1fr;
+  }
+  h1{
+    margin: 0;
+    padding:0 10px 0 10px;
+    display: grid;
+    align-items: center;
+  }
+
+  .heading {
+    grid-area: heading;
+    display: grid;
+    justify-content: center;
+    background: #b5ffb3;
+  }
+  .listBox1 {
+    grid-area: box1;
+    background-color:rgb(235, 42, 74) ;
+    display: grid;
+    justify-content: center;
+    padding: 10px;
+    display: block;
+  }
+
+  .listBox2 {
+    grid-area: box2;
+    background-color: rgb(235, 42, 74);
+    display: grid;
+    justify-content: center;
+    padding: 10px;
+    display: block;
+  }
+
+li{
+cursor: pointer;
+}
+li:hover{
+  color: white;
+  
+}
+  .item {
+    grid-area: item;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .item img{
+    height: 20rem;
+    width: 30rem;
+  }
+
+
+  .info-item {
+    grid-area: infoItem;
+    background-color: rgb(255, 185, 54);
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    display: block;
+  }
+  
+  h3{
+    margin: 0;
+    display: grid;
+    justify-content: center;
+  align-items: center;
+    background: pink;
+  }
+
+  .info-item h3{
+    height: 3rem;
+    width: auto;
+    margin: 0 2rem 0 2rem;
+    border: 2px solid rgb(235, 42, 74);
+    border-radius:0% 50% ;
+  }

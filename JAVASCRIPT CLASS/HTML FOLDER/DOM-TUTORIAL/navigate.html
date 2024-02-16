@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>navigation</title>
+  </head>
+  <body>
+    <div class="container">
+      <h3 id="heading"></h3>
+      <p id="para">this is paragraph</p>
+      <span class="span"></span>
+      <ul>
+        <li>kiran</li>
+        <li>saurav</li>
+        <li>mohit</li>
+        <li>dfdfv</li>
+        <li>rohit</li>
+      </ul>
+    </div>
+
+    <script>
+      let listItem = document.getElementsByClassName("container")[0].children[3].children[2];
+      console.log(listItem);
+      listItem.textContent='rohit'
+      const span= listItem.parentElement.previousSibling.textContent='Vikas'
+      
+      console.log(span);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORM VALIDATION</title>
+  </head>
+  <body>
+    <form action="action.php" onsubmit="return submi()">
+      <input type='text' placeholder="enter Name" id="text" />
+      <input type="password" name="" id="" placeholder="password here" />
+      <input type="email" placeholder="Enter Email here" required/>
+      <input type="submit" value="Submit" />
+    </form>
+
+    <form action="action.php" onsubmit="return sub()">
+    <input type="number" placeholder="Enter 0 to 9 number">
+    <input type="submit" value="Submit">
+    </form>
+    <script>
+        var text = document.querySelector("input[type='text']");
+        var password = document.querySelector("input[type='password']");
+        var email = document.querySelector("input[type='email']");
+
+      function submi() {
+       
+        if (text.value == "" || password.value=="" || email.value=="") {
+          alert("Please fill first after you can submit");
+          return false;
+        } else {
+          alert("form is submitted GOOD");
+          return true;
+        }
+      }
+
+  const num =document.querySelector("input[type='number']");    // ham yha bi .value laga sakte h ese ye hota h ki ye input me data ko store karta h
+  console.log(num);
+      function sub() {
+        if (0<=num.value && num.value<=9 && num.value!="" ) {
+            console.log(num.value);
+            alert("GOOD input");
+            return true;
+        }
+else{
+    alert("Try again only single digit is valid !!")
+    return false;
+}
+      }
+
+
+
+
+    </script>
+  </body>
+</html>

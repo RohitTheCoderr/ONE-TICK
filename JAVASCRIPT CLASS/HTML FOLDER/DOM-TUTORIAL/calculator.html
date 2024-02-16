@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <script defer src="calculator.js"></script>
+    <!-- <script defer src="dubCcalculator.js"></script> -->
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        /* background-color: rgb(218, 124, 31); */
+           background-color: #000000;
+        display: grid;
+        justify-content: center;
+      }
+
+      .container {
+        height: auto;
+        width: 20rem;
+        border: 6px solid rgb(38, 0, 255);
+        border-radius: 1rem;
+        padding: 0.4rem;
+        background-color: #2196f3;
+        /* background-color: #2196; */
+      }
+      #input{
+        height: 4rem;
+        width: 96%;
+        background-color: #a6acda;
+        border: 3px solid black;
+        border-radius: 0.7rem;
+        box-shadow: -1px 1px 5px 3px rgba(0, 0, 0, 0.516);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        overflow: scroll;
+        scroll-behavior: smooth;
+      }
+      .content{
+        display: grid;
+        grid-template-columns: auto auto auto;
+         justify-content: space-evenly;
+         gap: 0.2rem;
+      }
+      .item {
+        height: 4rem; width: 6rem;
+        margin: 0.1rem;
+        border-radius: 1rem;
+        background-color: rgba(248, 248, 248, 0.658);
+        border: 2px solid rgb(0, 0, 0);
+        font-weight: bold; font-size: 2.5rem; font-style: italic;
+        display: flex;
+       justify-content: center;
+       align-items: center;
+        cursor: pointer;
+        box-shadow: -1px 1px 5px 3px rgba(43, 0, 255, 0.516);
+      }
+      #equal{
+        background: green;
+      }
+      #del{
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input id="input" type="text" />
+      <div class="content">
+        <div id="2" class="item"  onclick="display('2')" >2</div>
+        <div id="3" class="item" onclick="display('3')">3</div>
+        <div id="1" class="item"  onclick="display('1')">1</div>
+        <div id="4" class="item" onclick="display('4')">4</div>
+        <div id="5" class="item"  onclick="display('5')">5</div>
+        <div id="6" class="item"  onclick="display('6')">6</div>
+        <div id="7" class="item"  onclick="display('7')">7</div>
+        <div id="8" class="item"  onclick="display('8')">8</div>
+        <div id="9" class="item" onclick="display('9')">9</div>
+        <div id="mod" class="item"  onclick="display('%')">%</div>
+        <div id="0" class="item"   onclick="display('0')">0</div>
+        <div id="coma" class="item"   onclick="display('.')">.</div>
+        <!-- <div id="coma" class="item" onclick="display('PI')">Pi</div> -->
+        <div id="plus" class="item"   onclick="display('+')">+</div>
+        <div id="minus" class="item"  onclick="display('-')">-</div>
+        <div id="del" class="item" onclick="clearInput()">Del</div>
+        <div id="mul" class="item"   onclick="display('*')">*</div>
+        <div id="divide" class="item" onclick="display('/')">/</div>
+        <div id="equal" class="item" onclick="solve()">=</div>
+    </div>
+    <!-- <p>(Calculator) made by Rohit</p> -->
+    </div>
+  </body>
+</html>

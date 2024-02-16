@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta set="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+    //   var monthName = prompt(
+    //     "Enter Month name for find how many days? in this month"
+    //   );
+
+    //   var monthName = monthName.toUpperCase();
+    //   switch (true) {
+    //     case monthName === "JANUARY":
+    //       {
+    //         alert("31 days in january month");
+    //       }
+    //       break;
+
+    //     case monthName === "FEBRUARY":
+    //       {
+    //         alert("28 OR 29 days in Febuary month");
+    //       }
+    //       break;
+
+    //     case monthName === "MARCH":
+    //       alert("31 days in March month");
+    //       break;
+
+    //     case monthName === "APRIL":
+    //         {
+    //             alert("30 days in April month");
+    //         }
+    //       break;
+
+    //     case monthName === "MAY":
+    //         {
+    //             alert("31 days in May month");
+    //         }
+    //       break;
+
+    //       case monthName === "JUNE":
+    //           {
+    //               alert("30 days in June month");
+    //           }
+    //       break;
+
+    //     case monthName === "JULY":
+    //       alert("31 days in July month");
+
+    //       break;
+    //     case monthName === "AUGUST":
+    //       alert("31 days in August month");
+
+    //       break;
+    //     case monthName === "SEPTEMBER":
+    //       alert("30 days in September month");
+
+    //       break;
+    //     case monthName === "OCTOBER":
+    //       alert("31 days in October month");
+
+    //       break;
+    //     case monthName === "NOVEMBER":
+    //       alert("30 days in November month");
+
+    //       break;
+    //     case monthName === "DECEMBER":
+    //       alert("31 days in December month");
+
+    //       break;
+
+    //     default:
+    //       {
+    //         alert("Month name is wrong/ your input is wrong");
+    //       }
+
+    //       break;
+    //   }
+
+    
+    //   2nd way for print month name 
+
+    // var month = prompt("Enter month name")
+
+    // var month= month.toUpperCase();
+
+    // switch (true) {
+    //     case (month ==="JANUARY" || month=== "MARCH" || month ==="MAY" || month==="JULY" || month==="AUGUST" || month==="OCTOBER" || month==="DECEMBER"):
+    //         {
+    //             alert(month + " is 31 days");
+    //         }
+    //         break;
+    //  case (month ==="FEBRUARY"):
+    //     {
+    //         alert(month + " is 28 or 29 days")
+    //     }
+    //     break;
+    //     case (month ==="APRIL" || month=== "JUNE" || month ==="SEPTEMBER" || month==="NOVEMBER"):
+    //         {
+    //             alert(month + " is 30 days");
+    //         }
+    //         break;
+    //     default:
+    //         alert(month +" " +"is invalid")
+    //         break;
+    // }
+
+    // 3RD way fro using this switch-case statement
+    var month = prompt("Enter month name")
+
+    var month= month.toUpperCase();
+
+    switch (true) {
+        case (month ==="JANUARY" || month=== "MARCH" || month ==="MAY" || month==="JULY" || month==="AUGUST" || month==="OCTOBER" || month==="DECEMBER"):
+            {
+                var store = (month + " is 31 days");
+            }
+            break;
+     case (month ==="FEBRUARY"):
+        {
+            var store = (month + " is 28 or 29 days")
+        }
+        break;
+        case (month ==="APRIL" || month=== "JUNE" || month ==="SEPTEMBER" || month==="NOVEMBER"):
+            {
+                store = (month + " is 30 days");
+            }
+            break;
+        default:
+            var store = (month +" " +"is invalid")
+            break;
+    }
+ alert(store);
+ document.write(store);
+
+    </script>
+  </body>
+</html>

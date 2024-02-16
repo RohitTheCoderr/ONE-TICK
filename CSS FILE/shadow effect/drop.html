@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+/* i thing you may think same as box sadow but not a same */
+/* filter: drop shadow is use for content and box shadow is use for box shadow like */
+.box{ height: 30vh;
+    width: 30vw;
+    background-color: rgb(0, 0, 0);
+    filter: drop-shadow(10px 10px 1px red);
+}
+/* you can that filter: drop-shadow is use for content not a box ok */
+h1{
+    filter: drop-shadow(10px 10px 1px rgb(0, 255, 0));
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"> </div>
+        <h1>ROHIT</h1>
+    </div>
+</body>
+</html>

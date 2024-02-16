@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .navbar{
+            background-color: teal;
+            height: 50vh;
+            width: 100vw;
+            display: flex;
+            align-items: baseline;
+            justify-content: space-evenly;
+        }
+        #imgdiv{
+          height: 200px;
+          width: 200px;
+          margin: 20px;
+          display: flex;
+          justify-content: center;
+          margin-top: 60px;
+      
+        }
+    #img{
+      min-height: 60px;
+      min-width: 60px;
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      border: 5px dotted rgb(0, 0, 0);
+      transition: all 2s ;
+      animation: roll 2s linear infinite;
+    }
+
+    @keyframes roll{}
+   #img:hover{
+    min-height: 70px;
+    min-width: 70px;
+    height: 90px;
+    width: 90px;
+    transform: rotate(360deg);
+   }
+
+   @keyframes all{
+    to{
+      transform: rotate(360deg);
+    }
+   }
+    #items{
+      width: 300px;
+      display: flex;
+      justify-content: space-between;
+  }
+  .item, #log{
+    height: 30px;
+    width: 60px;
+    border: 5px solid gray;
+    border-radius: 5px;
+    background-color: rgb(184, 174, 174);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: all 1s  linear ;
+  }
+
+  .item:hover{
+transform: scale(1.2);
+  }
+  #ser input[type="search"]{
+    /* margin-left:50px ; */
+    /* width: 300px; */
+    /* width: 300px; */
+    height: 42px;
+   /* text-decoration: none; */
+   /* border: none; */
+   border: 5px solid gray;
+    border-radius: 5px;
+  }
+
+input[type="search"]
+{
+  width: 300px;
+}
+
+
+
+
+  </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div   id="imgdiv"><img id="img" src="/HTML FILE/BgIMAGE/bg1.jpg" alt=""></div>
+      <div  id="items">
+        <div class="item">Home</div>
+        <div class="item">Service</div>
+        <div class="item">Login</div>
+      </div>
+      <div id="ser"><input type="search" placeholder="Find here"></div>
+      <div id="log">Logout</div>
+    </nav>
+  </body>
+</html>

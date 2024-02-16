@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <style>
+
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(360deg, #6dd5ed, #2193b0);
+  color: white;
+    }
+    
+    
+#countdown {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px 60px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+#timer {
+  font-size: 3rem;
+  letter-spacing: 3px;
+}
+
+.timer-unit {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  display: block;
+  /* cursor: pointer; */
+}
+  </style>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+  <div id="countdown">
+      <p id="timer">
+          <span id="days"></span>
+          <span class="timer-unit">Days</span>
+          <span id="hours"></span>
+          <span class="timer-unit">Hours</span>
+          <span id="minutes"></span>
+          <span class="timer-unit">Minutes</span>
+          <span id="seconds"></span>
+          <span class="timer-unit">Seconds</span>
+      </p>
+  </div>
+  <script>
+// <!-- JavaScript Source Code: -->
+
+const targetDate = new Date('2024-01-26T10:00:00'); // Set your target
+
+function updateCountdown() {
+  const currentTime = new Date();
+  const difference = targetDate - currentTime;
+
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+  document.getElementById("days").innerText = days;
+  document.getElementById("hours").innerText = hours;
+  document.getElementById("minutes").innerText = minutes;
+  document.getElementById("seconds").innerText = seconds;
+
+  if (difference < 0) {
+      clearInterval(interval);
+      document.getElementById("timer").innerText = "The event has started!";
+  }
+}
+
+const interval = setInterval(updateCountdown, 1000);
+
+  </script>
+</body>
+</html>
+<!-- CSS Source Code: -->
+
+

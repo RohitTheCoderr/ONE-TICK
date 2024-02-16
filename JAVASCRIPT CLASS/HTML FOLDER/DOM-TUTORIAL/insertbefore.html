@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="div-box">
+<h1>this is h1 tag</h1>
+<p id="p1">This is paragraph 1</p>
+<p id="p2">This is paragraph 2</p>
+    </div>
+
+
+
+    <script>
+            //  selected
+            const divBox= document.querySelector('.div-box')
+        const para1 =document.getElementById("p1")
+        const para2 =document.getElementById("p2")
+
+        // create
+        const span =document.createElement("span")
+        // add text
+        span.textContent='This is span1'
+        // another way
+        const text =document.createTextNode('This is span tag ')
+        span.appendChild(text)
+        // console.log(span);
+        divBox.appendChild(span)
+
+        divBox.insertBefore(span, para1)
+        // span.removeChild(span.childNodes[0])
+
+        // create h2 tag and textNode,  add text in textNode  
+         const h2new =document.createElement('h2')
+         const textName =document.createTextNode('Rohit')
+        //  after in h2 me text ko append kiya  h 
+         h2new.appendChild(textName)
+        //  here fir divbox me para2 ko replace kar diya h2new se 
+        divBox.replaceChild(h2new,para2)
+        
+        //  remove 
+
+        
+    </script>
+</body>
+</html>

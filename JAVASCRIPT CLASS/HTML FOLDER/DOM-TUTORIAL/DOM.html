@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        /* background-color: rgb(red, green, blue); */
+      }
+    </style>
+  </head>
+  <body id="body">
+    <div class="parent">
+      <h2 id="heading1">This is Heading 1</h2>
+      <p class="paragraph"></p>
+      <p class="paragraph"></p>
+      <p class="paragraph"></p>
+      <p class="paragraph"></p>
+      <p class="paragraph"></p>
+    </div>
+    <div class="parent">
+      <h2 id="heading1">This is Heading 2</h2>
+      <p class="paragraph"></p>
+      <p class="paragraph"></p>
+      <p class="paragraph"></p>
+      <p class="paragraph"></p>
+      <p class="paragraph"></p>
+    </div>
+    <button onclick="bodyChange()">change random color</button>
+
+    <script>
+      // getElementById
+
+      const bodystyle = document.getElementById("body");
+
+      function bodyChange(color) {
+        const red = Math.floor(Math.random() * 126);
+        const green = Math.floor(Math.random() * 126);
+        const blue = Math.floor(Math.random() * 126);
+        const rgb = `rgb(${red}, ${green}, ${blue})`;
+        bodystyle.style.background = rgb;
+        console.log(rgb);
+      }
+
+      //     bodystyle.style.backgroundColor ="#212121"
+      //     bodystyle.style.color ="#ffff"
+      //    const h2 =document.getElementById('heading1');
+      //    h2.style.backgroundColor ="green";
+
+      //    getElementByClassName
+      // const paragraph1 = document.getElementsByClassName("paragraph")[0]
+      // // const paragraph2 = document.getElementsByClassName("paragraph")[1]
+      // // const paragraph3 = document.getElementsByClassName("paragraph")[2]
+      //  paragraph1.innerHTML="This is paragraph 1";
+      //  paragraph1.style.color= "pink";
+      //  paragraph1.style.border= "2px solid red"
+
+      const parent = document.querySelectorAll(".parent");
+      for (let i = 0; i < parent.length; i++) {
+          for (let c = 0; c < parent[i].children.length; c++) {
+            console.log(parent[i].children[c])
+            parent[i].children[c].innerHTML = "Rohit";
+            parent[i].children[c].style.backgroundColor = "black";
+            parent[i].children[c].style.color = "white";
+        }
+      }
+    </script>
+  </body>
+</html>

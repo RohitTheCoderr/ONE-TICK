@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eval</title>
+</head>
+<body>
+        <input id="inPut" type="text" placeholder="Input">
+
+        <input id="outPut" type="text" placeholder="Output">
+        <input onclick="fun()" type="submit">
+
+
+    <script>
+
+
+ const fun = function(){
+     const input1= document.getElementById('inPut').value;
+     const input2= document.getElementById('outPut')
+     input2.value =eval(input1);
+
+}
+
+    </script>
+</body>
+</html>

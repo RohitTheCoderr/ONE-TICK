@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <h1>Hello</h1>
+   <script>
+var radius =parseInt(prompt("enter radius"))
+ let r= radius*radius
+var result= Math.PI*r
+document.write(result)
+
+
+
+// swap two num without third variable
+// by using XOR(^) oprator
+
+// this is object 
+const obj ={
+     num1 :parseInt(prompt("enter num1")),
+     num2 :parseInt(prompt("enter num2"))
+    }
+    // document.write(obj.num1+ " " + obj.num2)    
+
+    // this is enter fun
+    function enter(nu1, nu2) {
+        nu1=nu1^nu2;
+        nu2=nu1^nu2;
+        nu1=nu1^nu2;
+        
+        document.write("After swaping" +nu1+ " " + nu2)
+    }
+    enter(obj.num1, obj.num2)   // call enter fun
+
+    
+
+
+   </script>
+    <!-- </script> -->
+</body>
+</html>
